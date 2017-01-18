@@ -1,3 +1,3 @@
-# Service Fabric Talk - 2017-01-26
+# Service Fabric - 2017-01-26
 
-Demos
+Código de los demos de la plática en UnoTalks
