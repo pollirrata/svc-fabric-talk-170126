@@ -2,13 +2,8 @@
 using Microsoft.ServiceFabric.Services.Client;
 using Microsoft.ServiceFabric.Services.Communication.Wcf.Client;
 using System;
-using System.Collections.Generic;
 using System.Fabric;
-using System.Linq;
 using System.ServiceModel;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace Client
 {
@@ -36,12 +31,18 @@ namespace Client
             PresidentialServiceClient presidentialServiceClient = new PresidentialServiceClient(communicationClientFactory, uri);
 
 
+            //v2.0.0
+            //while (true)
+            //{
                 int presidentId = 44;
                 string presidentName = presidentialServiceClient.PresidentName(presidentId).Result;
                 Console.WriteLine("{0}th president is {1}", presidentId, presidentName);
                 string presidents = presidentialServiceClient.Presidents().Result;
                 Console.WriteLine("Last 5 presidents {0}", presidents);
-                Console.ReadKey();
+            Console.ReadLine();//remove for v2.0.0
+            //    Console.WriteLine();
+            //    Thread.Sleep(1000);
+            //}
         }
     }
 }
